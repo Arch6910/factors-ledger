@@ -1,3 +1,10 @@
+
+function escapeDriveQueryValue(value) {
+  // Google Drive v3 query strings use single quotes; escape backslash first,
+  // then single quotes.
+  return String(value).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+}
+
 (function () {
   "use strict";
 
